@@ -1,0 +1,48 @@
+-- Insert sample categories
+INSERT INTO categories (id, name) VALUES
+  ('11111111-1111-1111-1111-111111111111', 'Fiction'),
+  ('22222222-2222-2222-2222-222222222222', 'Non-Fiction'),
+  ('33333333-3333-3333-3333-333333333333', 'Science Fiction'),
+  ('44444444-4444-4444-4444-444444444444', 'Mystery'),
+  ('55555555-5555-5555-5555-555555555555', 'Biography'),
+  ('66666666-6666-6666-6666-666666666666', 'Self-Help')
+ON CONFLICT (name) DO NOTHING;
+
+-- Insert sample books
+INSERT INTO books (title, author, price, stock, category_id, description, cover_image) VALUES
+  ('The Great Gatsby', 'F. Scott Fitzgerald', 14.99, 50, '11111111-1111-1111-1111-111111111111', 
+   'A story of decadence and excess, exploring themes of idealism and the American Dream in the Jazz Age.', 
+   'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop'),
+  ('1984', 'George Orwell', 12.99, 75, '33333333-3333-3333-3333-333333333333', 
+   'A dystopian social science fiction novel that explores themes of totalitarianism and surveillance.', 
+   'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=600&fit=crop'),
+  ('To Kill a Mockingbird', 'Harper Lee', 15.99, 40, '11111111-1111-1111-1111-111111111111', 
+   'A classic of modern American literature about racial injustice and moral growth in the Deep South.', 
+   'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=600&fit=crop'),
+  ('Sapiens', 'Yuval Noah Harari', 18.99, 60, '22222222-2222-2222-2222-222222222222', 
+   'A brief history of humankind, exploring how Homo sapiens came to dominate the world.', 
+   'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=600&fit=crop'),
+  ('The Sherlock Holmes Collection', 'Arthur Conan Doyle', 24.99, 30, '44444444-4444-4444-4444-444444444444', 
+   'The complete adventures of the world''s most famous detective, Sherlock Holmes.', 
+   'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop'),
+  ('Steve Jobs', 'Walter Isaacson', 19.99, 45, '55555555-5555-5555-5555-555555555555', 
+   'The exclusive biography of Steve Jobs, based on more than forty interviews with him.', 
+   'https://images.unsplash.com/photo-1589998059171-988d887df646?w=400&h=600&fit=crop'),
+  ('Atomic Habits', 'James Clear', 16.99, 100, '66666666-6666-6666-6666-666666666666', 
+   'An easy and proven way to build good habits and break bad ones.', 
+   'https://images.unsplash.com/photo-1535398089889-dd807df1dfaa?w=400&h=600&fit=crop'),
+  ('Dune', 'Frank Herbert', 17.99, 55, '33333333-3333-3333-3333-333333333333', 
+   'Set in the distant future, Dune is a science fiction epic about politics, religion, and ecology.', 
+   'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop'),
+  ('The Psychology of Money', 'Morgan Housel', 15.99, 80, '66666666-6666-6666-6666-666666666666', 
+   'Timeless lessons on wealth, greed, and happiness from one of the most influential finance writers.', 
+   'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=600&fit=crop'),
+  ('Gone Girl', 'Gillian Flynn', 13.99, 35, '44444444-4444-4444-4444-444444444444', 
+   'A thriller about a marriage gone terribly wrong, full of twists and dark secrets.', 
+   'https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=400&h=600&fit=crop'),
+  ('Educated', 'Tara Westover', 17.99, 42, '55555555-5555-5555-5555-555555555555', 
+   'A memoir about a woman who grows up in a survivalist family and eventually earns a PhD from Cambridge.', 
+   'https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=400&h=600&fit=crop'),
+  ('The Midnight Library', 'Matt Haig', 14.99, 65, '11111111-1111-1111-1111-111111111111', 
+   'Between life and death there is a library, and within that library, the shelves go on forever.', 
+   'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop');
