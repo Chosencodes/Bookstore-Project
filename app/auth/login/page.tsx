@@ -35,7 +35,21 @@ export default function LoginPage() {
         password,
       })
       if (error) throw error
-      router.push('/admin')
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user) {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role')
+          .eq('id', user.id)
+          .single()
+        if (profile?.role === 'admin') {
+          router.push('/admin')
+        } else {
+          router.push('/account')
+        }
+      } else {
+        router.push('/account')
+      }
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : 'An error occurred')
     } finally {
